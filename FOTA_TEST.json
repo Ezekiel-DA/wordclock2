@@ -1,0 +1,8 @@
+{
+    "type": "FOTA_TEST",
+    "version": 2,
+    "host": "ezekiel-da.github.io",
+    "port": 80,
+    "bin": "/wordclock2/wordclock2_firmware/FOTA_test/FOTA_test.ino.esp32.bin",
+    "check_signature": false
+}

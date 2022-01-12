@@ -6,7 +6,7 @@
 
 #include "clockface.h"
 
-#define FIRMWARE_VERSION 3
+#define FIRMWARE_VERSION 4
 
 esp32FOTA esp32FOTA("wordclock2-base-firmware", FIRMWARE_VERSION);
 Timezone tz;
@@ -93,7 +93,8 @@ void setup() {
     clearClockFace();
     FastLED.show();
 
-    esp32FOTA.checkURL = "https://ezekiel-da.github.io/wordclock2/deployment.json";
+    //esp32FOTA.checkURL = "https://ezekiel-da.github.io/wordclock2/deployment.json";
+    esp32FOTA.checkURL = "http://desktop.local/deployment.json";
 
     WiFi.onEvent(SysProvEvent);
     WiFiProv.beginProvision(WIFI_PROV_SCHEME_BLE, WIFI_PROV_SCHEME_HANDLER_FREE_BTDM, WIFI_PROV_SECURITY_1, "bisous", "PROV_clock");
