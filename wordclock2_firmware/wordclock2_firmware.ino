@@ -140,7 +140,7 @@ void loop() {
 
      static uint16_t prevFOTACheck = millis();
     uint16_t now = millis();
-    if ((uint16_t)(now - prevFOTACheck) >= 5)
+    if ((uint16_t)(now - prevFOTACheck) >= (60*1000))
     {
       bool updatedNeeded = esp32FOTA.execHTTPcheck();
       if (updatedNeeded)
