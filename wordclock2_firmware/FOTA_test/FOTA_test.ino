@@ -2,7 +2,7 @@
 #include <esp32fota.h>
 #include <WiFiProv.h>
 
-#define FIRMWARE_VERSION 2
+#define FIRMWARE_VERSION 1
 
 esp32FOTA esp32FOTA("FOTA_TEST", FIRMWARE_VERSION);
 
@@ -49,7 +49,7 @@ void SysProvEvent(arduino_event_t *sys_event)
 void setup() {
     Serial.begin(115200);
 
-    esp32FOTA.checkURL = "http://ezekiel-da.github.io/wordclock2/FOTA_TEST.json";
+    esp32FOTA.checkURL = "https://ezekiel-da.github.io/wordclock2/FOTA_TEST.json";
     
     WiFi.onEvent(SysProvEvent);
     WiFiProv.beginProvision(WIFI_PROV_SCHEME_BLE, WIFI_PROV_SCHEME_HANDLER_FREE_BTDM, WIFI_PROV_SECURITY_1, "bisous", "PROV_clock");
