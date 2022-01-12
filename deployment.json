@@ -1,6 +1,6 @@
 {
     "type": "wordclock2-base-firmware",
-    "version": 1,
+    "version": 2,
     "host": "http://ezekiel-da.github.io/wordclock2",
     "port": 80,
     "bin": "/wordclock2_firmware/wordclock2_firmware.ino.esp32.bin",

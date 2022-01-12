@@ -6,7 +6,9 @@
 
 #include "clockface.h"
 
-esp32FOTA esp32FOTA("wordclock2-base-firmware", 1);
+#define FIRMWARE_VERSION 2
+
+esp32FOTA esp32FOTA("wordclock2-base-firmware", FIRMWARE_VERSION);
 Timezone tz;
 
 static uint16_t rainbowLoopGlobalSpeed = 100;
@@ -93,6 +95,9 @@ void setup() {
 
     WiFi.onEvent(SysProvEvent);
     WiFiProv.beginProvision(WIFI_PROV_SCHEME_BLE, WIFI_PROV_SCHEME_HANDLER_FREE_BTDM, WIFI_PROV_SECURITY_1, "bisous", "PROV_clock");
+
+    Serial.println("Word Clock II - Word Clock Lives");
+    Serial.print("Running firmware version "); Serial.println(FIRMWARE_VERSION);
 
     xTaskCreate(rainbowLoop, "startupEffect", 10000, NULL, 1, &startupEffectTaskHandle);
 
