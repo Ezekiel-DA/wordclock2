@@ -70,6 +70,6 @@ void loop() {
         esp32FOTA.execOTA();
       }
 
-      delay(10000);
+      delay(30000);
     
 }
